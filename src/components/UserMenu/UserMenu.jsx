@@ -1,14 +1,10 @@
-import { useDispatch } from 'react-redux';
-import { logOut } from '../../redux/auth';
+import { useSelector, useDispatch } from 'react-redux';
+import { logOut, getUserName } from '../../redux/auth';
 import styles from '../UserMenu/UserMenu.module.css';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-
-  const handleChange = event => {
-    const { value } = event.currentTarget;
-    console.log(value);
-  };
+  const name = useSelector(getUserName);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -17,22 +13,15 @@ export default function UserMenu() {
   };
 
   return (
-    <form className={styles.UserMenuForm} onSubmit={handleSubmit}>
-      <label className={styles.UserMenuForm__label}>
-        Email
-        <input
-          className={styles.UserMenu__input}
-          type="string"
-          name="name"
-          required
-          //   value={value}
-          onChange={handleChange}
-        />
-      </label>
-
-      <button className={styles.UserMenuForm__button} type="submit">
+    <div>
+      <span>Welcome, {name} </span>
+      <button
+        className={styles.UserMenuForm__button}
+        type="button"
+        onClick={handleSubmit}
+      >
         Log out
       </button>
-    </form>
+    </div>
   );
 }

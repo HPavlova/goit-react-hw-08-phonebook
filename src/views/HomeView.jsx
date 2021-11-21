@@ -4,5 +4,10 @@ import { getIsLoggedIn } from '../redux/auth';
 
 export default function HomeView() {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  return <div>{!isLoggedIn && <div>Welcome</div>}</div>;
+  return (
+    <div>
+      Welcome!
+      {!isLoggedIn && <div>Please, register or log in to your account</div>}
+    </div>
+  );
 }

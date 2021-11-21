@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import ContactList from '../components/ContactList/ContactList';
 import ContactForm from '../components/ContactForm/ContactForm';
 import Filter from '../components/Filter/Filter';
-import { fetchCurrentUser } from '../redux/auth';
+import { fetchContact } from '../redux/contacts';
 
 export default function ContactsView() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCurrentUser());
+    dispatch(fetchContact());
   }, [dispatch]);
 
   return (
