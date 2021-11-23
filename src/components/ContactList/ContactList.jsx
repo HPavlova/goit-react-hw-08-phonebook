@@ -23,7 +23,7 @@ export default function ContactList() {
       <ul className={styles.ContactList}>
         {contacts.map(contact => (
           <li className={styles.ContactList__item} key={contact.id}>
-            {contact.name + ': ' + contact.phone}
+            {contact.name + ': ' + contact.number}
             <button
               type="button"
               className={styles.ContactList__button}
@@ -45,7 +45,7 @@ ContactList.propTypes = {
   contact: propTypes.shape({
     id: propTypes.string.isRequired,
     name: propTypes.string.isRequired,
-    phone: propTypes.string.isRequired,
+    number: propTypes.string.isRequired,
   }),
 };
 

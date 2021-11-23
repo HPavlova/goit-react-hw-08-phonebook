@@ -38,6 +38,7 @@ export default function App() {
                   <HomeView />
                 </PublicRoute>
               }
+              navigateTo="/contacts"
             />
             <Route
               path="/register"

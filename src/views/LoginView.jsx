@@ -11,7 +11,7 @@ export default function LoginView() {
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
-
+    console.log(name);
     switch (name) {
       case 'email':
         setEmail(value);
@@ -35,7 +35,7 @@ export default function LoginView() {
       );
     }
 
-    dispatch(logIn(email, password));
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };

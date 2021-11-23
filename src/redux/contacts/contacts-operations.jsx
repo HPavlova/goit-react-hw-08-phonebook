@@ -2,7 +2,18 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // axios.defaults.baseURL = 'https://618d5076fe09aa00174406a2.mockapi.io';
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/docs/';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+// const fetchContact = createAsyncThunk('contacts/fetchContact', async () => {
+//   fetchContact.pending();
+//   try {
+//     const { data } = await axios.get('/contacts');
+//     console.log(data);
+//     return data;
+//   } catch (error) {
+//     fetchContact.rejected(error);
+//   }
+// });
 
 const fetchContact = createAsyncThunk('contacts/fetchContact', async () => {
   fetchContact.pending();
@@ -11,7 +22,8 @@ const fetchContact = createAsyncThunk('contacts/fetchContact', async () => {
     console.log(data);
     return data;
   } catch (error) {
-    fetchContact.rejected(error);
+    console.log(error);
+    // fetchContacts.rejected(error);
   }
 });
 

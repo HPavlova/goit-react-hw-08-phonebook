@@ -23,13 +23,18 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
     },
     [logOut.fulfilled](state, action) {
-      state = initialState;
+      state.user = { name: null, email: null };
+      state.token = null;
+      state.isLoggedIn = false;
+      // state.isFetchingCurrentUser = false;
+      // state = initialState;
     },
     [fetchCurrentUser.pending](state) {
       state.isFetchingCurrentUser = true;
     },
     [fetchCurrentUser.fulfilled](state, action) {
-      state.user = action.payload.user;
+      state.user = action.payload;
+      // console.log(state.user);
       state.isLoggedIn = true;
       state.isFetchingCurrentUser = false;
     },

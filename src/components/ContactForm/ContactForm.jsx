@@ -7,7 +7,7 @@ import { addContact, getVisibleContacts } from '../../redux/contacts';
 
 function ContactForm() {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(getVisibleContacts);
 
   const dispatch = useDispatch();
@@ -20,8 +20,8 @@ function ContactForm() {
         setName(value);
         break;
 
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
 
       default:
@@ -36,11 +36,11 @@ function ContactForm() {
     if (searchSameName) {
       alert(`${name} is already in contacts`);
     } else {
-      dispatch(addContact({ name, phone }));
+      dispatch(addContact({ name, number }));
     }
 
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -63,11 +63,11 @@ function ContactForm() {
         <input
           className={styles.ContactForm__input}
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
           required
-          value={phone}
+          value={number}
           onChange={handleChange}
         />
       </label>
@@ -82,7 +82,7 @@ ContactForm.propTypes = {
   handleChange: propTypes.func,
   handleSubmit: propTypes.func,
   name: propTypes.string,
-  phone: propTypes.string,
+  number: propTypes.string,
 };
 
 export default ContactForm;

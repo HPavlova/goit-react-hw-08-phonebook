@@ -42,7 +42,7 @@ export default function RegisterView() {
       return toast.error('Password must be at least 7 characters');
     }
 
-    dispatch(register(name, email, password));
+    dispatch(register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');
