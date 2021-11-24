@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+}
+
+.link {
+  width: 80px;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+  /* padding-right: 5px; */
+}
+
+/* .activeLink {
+  color: rgb(236, 96, 96);
+} */

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { register } from '../redux/auth';
+import styles from './views.module.css';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -49,33 +50,37 @@ export default function RegisterView() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
+      <label className={styles.label}>
         Name
         <input
-          //   className={styles.LoginForm__input}
+          className={styles.input}
           type="text"
           name="name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
           required
           value={name}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className={styles.label}>
         Email
         <input
-          //   className={styles.LoginForm__input}
+          className={styles.input}
           type="text"
           name="email"
+          // pattern=".+@globex\.com"
+          maxLength="20"
           required
           value={email}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className={styles.label}>
         Password
         <input
-          //   className={styles.LoginForm__input}
+          className={styles.input}
           type="password"
           name="password"
           required
@@ -83,7 +88,9 @@ export default function RegisterView() {
           onChange={handleChange}
         />
       </label>
-      <button type="submit">Sign up</button>
+      <button className={styles.button} type="submit">
+        Sign up
+      </button>
     </form>
   );
 }

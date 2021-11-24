@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-// import styles from '../AuthNav/AuthNav.module.css';
+import styles from '../AuthNav/AuthNav.module.css';
 
 export default function AuthNav() {
   return (
@@ -7,7 +7,7 @@ export default function AuthNav() {
       <nav>
         <NavLink
           to="/register"
-          // className={styles.link}
+          className={styles.link}
           // activeClassName={styles.activeLink}
         >
           Sign up
@@ -15,13 +15,12 @@ export default function AuthNav() {
 
         <NavLink
           to="/login"
-          // className={styles.link}
+          className={styles.link}
           // activeClassName={styles.activeLink}
         >
           Log in
         </NavLink>
       </nav>
-      <hr />
     </>
   );
 }

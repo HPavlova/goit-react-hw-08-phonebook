@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import { logIn } from '../redux/auth';
+import { getIsLoggedIn, logIn } from '../redux/auth';
+import styles from './views.module.css';
 
 export default function LoginView() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -41,30 +44,34 @@ export default function LoginView() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email
-        <input
-          //   className={styles.LoginForm__input}
-          type="text"
-          name="email"
-          required
-          value={email}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password
-        <input
-          //   className={styles.LoginForm__input}
-          type="password"
-          name="password"
-          required
-          value={password}
-          onChange={handleChange}
-        />
-      </label>
-      <button type="submit">Log in</button>
-    </form>
+    !isLoggedIn && (
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <label className={styles.label}>
+          Email
+          <input
+            className={styles.input}
+            type="text"
+            name="email"
+            required
+            value={email}
+            onChange={handleChange}
+          />
+        </label>
+        <label className={styles.label}>
+          Password
+          <input
+            className={styles.input}
+            type="password"
+            name="password"
+            required
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
+        <button className={styles.button} type="submit">
+          Log in
+        </button>
+      </form>
+    )
   );
 }

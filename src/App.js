@@ -29,44 +29,41 @@ export default function App() {
       <Container>
         <AppBar />
 
-        <Suspense fallback={<p>Загружается...</p>}>
+        <Suspense fallback={<p>Loading...</p>}>
           <Routes>
             <Route
               path="/"
               element={
-                <PublicRoute>
+                <PublicRoute navigateTo="/contacts">
                   <HomeView />
                 </PublicRoute>
               }
-              navigateTo="/contacts"
             />
             <Route
               path="/register"
               element={
-                <PublicRoute>
+                <PublicRoute restricted>
                   <RegisterView />
                 </PublicRoute>
               }
-              restricted
             />
             <Route
               path="/login"
               element={
-                <PublicRoute>
+                <PublicRoute restricted>
                   <LoginView />
                 </PublicRoute>
               }
-              navigateTo="/contacts"
-              restricted
+              // navigateTo="/contacts"
+              // restricted
             />
             <Route
               path="/contacts"
               element={
-                <PrivateRoute>
+                <PrivateRoute navigateTo="/login">
                   <ContactsView />
                 </PrivateRoute>
               }
-              navigateTo="/login"
             />
           </Routes>
         </Suspense>

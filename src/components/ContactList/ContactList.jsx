@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 import styles from './ContactList.module.css';
 
 import {
@@ -39,15 +39,15 @@ export default function ContactList() {
   );
 }
 
-ContactList.propTypes = {
-  onDeleteContact: propTypes.func,
-  contacts: propTypes.arrayOf(propTypes.object),
-  contact: propTypes.shape({
-    id: propTypes.string.isRequired,
-    name: propTypes.string.isRequired,
-    number: propTypes.string.isRequired,
-  }),
-};
+// ContactList.propTypes = {
+//   onDeleteContact: propTypes.func,
+//   contacts: propTypes.arrayOf(propTypes.object),
+//   contact: propTypes.shape({
+//     id: propTypes.string.isRequired,
+//     name: propTypes.string.isRequired,
+//     number: propTypes.string.isRequired,
+//   }),
+// };
 
 // =====  previous version ===
 
