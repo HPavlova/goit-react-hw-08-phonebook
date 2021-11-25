@@ -5,6 +5,9 @@ import { toast } from 'react-toastify';
 import { register } from '../redux/auth';
 import styles from './views.module.css';
 
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function RegisterView() {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -88,9 +91,9 @@ export default function RegisterView() {
           onChange={handleChange}
         />
       </label>
-      <button className={styles.button} type="submit">
+      <Button variant="outline-secondary" size="sm" type="submit">
         Sign up
-      </button>
+      </Button>
     </form>
   );
 }

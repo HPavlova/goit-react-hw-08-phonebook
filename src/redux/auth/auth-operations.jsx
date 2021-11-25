@@ -45,8 +45,6 @@ export const fetchCurrentUser = createAsyncThunk(
 
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('токена нет - уходим');
-      // console.log('токена нет - уходим');
-      // return;
     }
 
     try {

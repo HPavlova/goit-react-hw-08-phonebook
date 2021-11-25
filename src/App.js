@@ -54,8 +54,6 @@ export default function App() {
                   <LoginView />
                 </PublicRoute>
               }
-              // navigateTo="/contacts"
-              // restricted
             />
             <Route
               path="/contacts"

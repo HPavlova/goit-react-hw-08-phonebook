@@ -6,6 +6,9 @@ import { toast } from 'react-toastify';
 import { getIsLoggedIn, logIn } from '../redux/auth';
 import styles from './views.module.css';
 
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function LoginView() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -68,9 +71,9 @@ export default function LoginView() {
             onChange={handleChange}
           />
         </label>
-        <button className={styles.button} type="submit">
+        <Button variant="outline-secondary" size="sm" type="submit">
           Log in
-        </button>
+        </Button>
       </form>
     )
   );

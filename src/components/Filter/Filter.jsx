@@ -1,17 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
 import propTypes from 'prop-types';
-import styles from './Filter.module.css';
 
 import { getFilter, changeFilter } from '../../redux/contacts';
+import styles from './Filter.module.css';
 
 const Filter = () => {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className={styles.Filter}>
       <label className={styles.Filter__label}>
-        Find contacts by name
+        Find contacts by name:
         <input
           className={styles.Filter__input}
           type="text"

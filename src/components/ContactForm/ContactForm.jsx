@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import propTypes from 'prop-types';
-import styles from './ContactForm.module.css';
 
 import { addContact, getVisibleContacts } from '../../redux/contacts';
+import styles from './ContactForm.module.css';
+
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -71,9 +74,9 @@ function ContactForm() {
           onChange={handleChange}
         />
       </label>
-      <button className={styles.ContactForm__button} type="submit">
+      <Button variant="outline-secondary" size="sm" type="submit">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 }

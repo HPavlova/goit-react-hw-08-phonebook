@@ -6,6 +6,8 @@ import AuthNav from '../AuthNav/AuthNav';
 import UserMenu from '../UserMenu/UserMenu';
 import { getIsLoggedIn } from '../../redux/auth';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default function AppBar() {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (

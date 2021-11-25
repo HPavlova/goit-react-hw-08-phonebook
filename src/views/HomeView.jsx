@@ -8,7 +8,7 @@ export default function HomeView() {
   return (
     <div className={styles.text}>
       Welcome!
-      {!isLoggedIn && <div>Please, register or log in to the Phonebook. </div>}
+      {!isLoggedIn && <div>Please, register or log in to start. </div>}
     </div>
   );
 }

@@ -3,10 +3,6 @@
   text-transform: uppercase;
   cursor: pointer;
   font-weight: 500;
-  color: black;
-  margin-right: 10px;
+  color: #3c3c3c;
+  margin-right: 5px;
 }
-
-/* .activeLink {
-  color: rgb(236, 96, 96);
-} */

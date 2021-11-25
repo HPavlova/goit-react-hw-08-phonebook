@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../AuthNav/AuthNav.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function AuthNav() {
   return (
@@ -7,16 +8,22 @@ export default function AuthNav() {
       <nav>
         <NavLink
           to="/register"
-          className={styles.link}
-          // activeClassName={styles.activeLink}
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.activeLink} + ${styles.link}`
+              : `${styles.link}`
+          }
         >
           Sign up
         </NavLink>
 
         <NavLink
           to="/login"
-          className={styles.link}
-          // activeClassName={styles.activeLink}
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.activeLink} + ${styles.link}`
+              : `${styles.link}`
+          }
         >
           Log in
         </NavLink>

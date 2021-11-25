@@ -5,13 +5,7 @@ nav {
 .link {
   width: 80px;
   text-decoration: none;
-  /* text-transform: uppercase; */
   cursor: pointer;
   font-weight: 500;
-  color: black;
-  /* padding-right: 5px; */
+  color: #3c3c3c;
 }
-
-/* .activeLink {
-  color: rgb(236, 96, 96);
-} */

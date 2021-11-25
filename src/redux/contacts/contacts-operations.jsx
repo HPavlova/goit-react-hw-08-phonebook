@@ -15,18 +15,6 @@ const fetchContact = createAsyncThunk('contacts/fetchContact', async () => {
   }
 });
 
-// const fetchContact = createAsyncThunk('contacts/fetchContact', async () => {
-//   fetchContact.pending();
-//   try {
-//     const { data } = await axios.get('/contacts');
-//     console.log(data);
-//     return data;
-//   } catch (error) {
-//     console.log(error);
-//     // fetchContacts.rejected(error);
-//   }
-// });
-
 const addContact = createAsyncThunk('contacts/addContact', async contact => {
   addContact.pending();
   try {
